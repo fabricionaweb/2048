@@ -10,6 +10,8 @@ function GameManager(size, InputManager, Actuator, ScoreManager) {
   this.inputManager.on("restart", this.restart.bind(this));
   this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
 
+  this.bigValue     = 0;
+
   this.setup();
 }
 
@@ -138,6 +140,13 @@ GameManager.prototype.move = function (direction) {
 
           // Update the score
           self.score += merged.value;
+
+          // Save best value
+          if( merged.value > self.bigValue ) {
+            self.bigValue = merged.value;
+
+            document.querySelector('body').className = 'bigscore-'+ self.bigValue;
+          }
 
           // The mighty 2048 tile
           if (merged.value === 2048) self.won = true;
