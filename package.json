@@ -1,0 +1,17 @@
+{
+  "name": "katon-2048",
+  "version": "0.1.0",
+  "description": "fork do gaming 2048",
+  "homepage": "katon.com.br/2048",
+  "author": "katon",
+  "dependencies": {
+    "gulp": "~3.5.5"
+  },
+  "devDependencies": {
+    "gulp-sass": "^0.7.1",
+    "gulp-uglify": "^0.2.1",
+    "gulp-concat": "^2.1.7",
+    "gulp-util": "^2.2.14",
+    "gulp-livereload": "^1.2.0"
+  }
+}
