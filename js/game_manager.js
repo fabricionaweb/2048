@@ -10,13 +10,15 @@ function GameManager(size, InputManager, Actuator, ScoreManager) {
   this.inputManager.on("restart", this.restart.bind(this));
   this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
 
-  this.bigValue     = 0;
+  this.bigValue     = 2;
 
   this.setup();
 }
 
 // Restart the game
 GameManager.prototype.restart = function () {
+  this.bigValue = 2;
+
   this.actuator.continue();
   this.setup();
 };
@@ -44,6 +46,8 @@ GameManager.prototype.setup = function () {
   this.won         = false;
   this.keepPlaying = false;
 
+  document.querySelector('body').className = 'bigscore-2';
+  
   // Add the initial tiles
   this.addStartTiles();
 
